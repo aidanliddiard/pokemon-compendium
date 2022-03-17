@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.card {
+  width: 40vw;
+  margin: 5px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  font-family: 'VT323', monospace;
+}
+.name {
+  font-family: 'Press Start 2P', cursive;
+}
+.electric {
+  border: 10px solid yellow;
+}
+.psychic {
+  border: 10px solid purple;
+}
+.poison {
+  border: 10px solid magenta;
+}
+.water {
+  border: 10px solid blue;
+}
+.steel {
+  border: 10px solid silver;
+}
+.fire {
+  border: 10px solid red;
+}
+.grass {
+  border: 10px solid green;
+}
+.bug {
+  border: 10px solid darkgreen;
+}
+.rock {
+  border: 10px solid darkgrey;
+}
+.ground {
+  border: 10px solid brown;
+}
+.fighting {
+  border: 10px solid rgba(165, 42, 42, 0.541);
+}
+.dark {
+  border: 10px solid black;
+}
+.normal {
+  border: 10px solid pink;
+}
+.fairy {
+  border: 10px solid rgb(231, 165, 231);
+}
+.ice {
+  border: 10px solid rgba(0, 195, 255, 0.651);
+}
+.fighting {
+  border: 10px solid brown;
+}
+.dragon {
+  border: 10px solid gold;
+}
+.ghost {
+  border: 10px solid white;
+}
+
+img {
+  width: 30vw;
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Main.css';
 import { fetchPokemon, fetchType, fetchFiltered } from '../services/pokemon';
 import PokeCard from '../Components/PokeCard/PokeCard';
 import TypeDropdown from '../Components/TypeDropdown/TypeDropdown';
@@ -29,11 +30,15 @@ export default function Main() {
   }, [selectedType]);
 
   return (
-    <div>
-      <TypeDropdown types={types} setSelectedType={setSelectedType} selectedType={selectedType} />
-      {poke.map((poke) => (
-        <PokeCard key={poke.id} {...poke} />
-      ))}
-    </div>
+    <main>
+      <header>
+        <TypeDropdown types={types} setSelectedType={setSelectedType} selectedType={selectedType} />
+      </header>
+      <div className="cards">
+        {poke.map((poke) => (
+          <PokeCard key={poke.id} {...poke} />
+        ))}
+      </div>
+    </main>
   );
 }
