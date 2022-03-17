@@ -12,6 +12,7 @@ export async function fetchType() {
 
 export async function fetchFiltered(type, query) {
   const params = new URLSearchParams();
+  params.set('perPage', 10);
   if (type !== 'all') {
     params.set('type', type);
   }

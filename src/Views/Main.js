@@ -10,6 +10,7 @@ export default function Main() {
   const [types, setTypes] = useState([]);
   const [selectedType, setSelectedType] = useState('all');
   const [query, setQuery] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,15 +24,14 @@ export default function Main() {
 
   useEffect(() => {
     const fetchData = async () => {
-      //if (selectedType === 'all' && query === '') return setPoke(await fetchPokemon());
-
       const resp = await fetchFiltered(selectedType, query);
       setPoke(resp);
+      setLoading(false);
     };
     fetchData();
   }, [selectedType, query]);
 
-  console.log('query', query);
+  if (loading) return <span className="loader"></span>;
 
   return (
     <main>
