@@ -6,7 +6,7 @@ import TypeDropdown from '../Components/TypeDropdown/TypeDropdown';
 export default function Main() {
   const [poke, setPoke] = useState([]);
   const [types, setTypes] = useState([]);
-  const [selectedType, setSelectedType] = useState('');
+  const [selectedType, setSelectedType] = useState('all');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,8 +19,9 @@ export default function Main() {
   }, []);
 
   useEffect(() => {
-    if (!selectedType) return;
     const fetchData = async () => {
+      if (selectedType === 'all') return setPoke(await fetchPokemon());
+
       const resp = await fetchFiltered(selectedType);
       setPoke(resp);
     };
