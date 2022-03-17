@@ -6,10 +6,14 @@
   margin: 5px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   font-family: 'VT323', monospace;
+  background-color: #121212e8;
+  color: white;
 }
+
 .name {
   font-family: 'Press Start 2P', cursive;
 }
+
 .electric {
   border: 10px solid yellow;
 }
