@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Main.css';
-import { fetchPokemon, fetchType, fetchFiltered, fetchEggGroup } from '../services/pokemon';
+import { fetchPokemon, fetchType, fetchFiltered } from '../services/pokemon';
 import PokeCard from '../Components/PokeCard/PokeCard';
 import TypeDropdown from '../Components/TypeDropdown/TypeDropdown';
 import SeachBar from '../Components/SearchBar/SeachBar';
