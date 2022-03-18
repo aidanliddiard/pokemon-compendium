@@ -5,7 +5,7 @@ export default function SeachBar({ setQuery }) {
 
   return (
     <div>
-      <input onChange={(e) => setValue(e.target.value)} placeholder="search here" />
+      <input onChange={(e) => setValue(e.target.value)} />
       <button onClick={() => setQuery(value)}>Search</button>
     </div>
   );
