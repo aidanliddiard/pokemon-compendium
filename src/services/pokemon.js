@@ -10,13 +10,13 @@ export async function fetchType() {
   return data.map((item) => item.type);
 }
 
-// export async function fetchEggGroup() {
-//   const resp = await fetch('https://pokedex-alchemy.herokuapp.com/api/pokedex/eggGroups');
-//   const data = await resp.json();
-//   return data.map((item) => item.type);
-// }
+export async function fetchEggGroup() {
+  const resp = await fetch('https://pokedex-alchemy.herokuapp.com/api/pokedex/eggGroups');
+  const data = await resp.json();
+  return data.map((item) => item.eggGroup);
+}
 
-export async function fetchFiltered(type, query, order) {
+export async function fetchFiltered(type, query, order, eggGroup) {
   const params = new URLSearchParams();
   params.set('perPage', 10);
   if (type !== 'all') {
@@ -28,6 +28,9 @@ export async function fetchFiltered(type, query, order) {
   if (order !== '') {
     params.set('sort', 'pokemon');
     params.set('direction', order);
+  }
+  if (eggGroup !== 'all') {
+    params.set('egg_group_1', eggGroup);
   }
 
   const response = await fetch(

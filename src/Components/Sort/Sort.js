@@ -3,6 +3,7 @@ import React from 'react';
 export default function Sort({ order, setOrder }) {
   return (
     <div>
+      <h5>Sort Pokemon Alphabetically</h5>
       <label>
         <input
           type="radio"
