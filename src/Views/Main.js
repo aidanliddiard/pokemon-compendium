@@ -4,6 +4,7 @@ import { fetchPokemon, fetchType, fetchFiltered } from '../services/pokemon';
 import PokeCard from '../Components/PokeCard/PokeCard';
 import TypeDropdown from '../Components/TypeDropdown/TypeDropdown';
 import SeachBar from '../Components/SearchBar/SeachBar';
+import Sort from '../Components/Sort/Sort';
 
 export default function Main() {
   const [poke, setPoke] = useState([]);
@@ -13,6 +14,7 @@ export default function Main() {
   //const [selectedeggGroup, setSelectedEggGroup] = useState([]);
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(true);
+  const [order, setOrder] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,20 +22,20 @@ export default function Main() {
       setPoke(resp);
       const data = await fetchType();
       setTypes(['all', ...data]);
-      //const data = await fetchEggGroup();
-      //console.log(data);
+      // const eggData = await fetchEggGroup();
+      // console.log(ata);
     };
     fetchData();
   }, []);
 
   useEffect(() => {
     const fetchData = async () => {
-      const resp = await fetchFiltered(selectedType, query);
+      const resp = await fetchFiltered(selectedType, query, order);
       setPoke(resp);
       setLoading(false);
     };
     fetchData();
-  }, [selectedType, query]);
+  }, [selectedType, query, order]);
 
   if (loading) return <div className="loader"></div>;
 
@@ -42,6 +44,7 @@ export default function Main() {
       <div>
         <TypeDropdown types={types} setSelectedType={setSelectedType} selectedType={selectedType} />
         <SeachBar setQuery={setQuery} />
+        <Sort order={order} setOrder={setOrder} />
       </div>
       <div className="cards">
         {poke.map((poke) => (
